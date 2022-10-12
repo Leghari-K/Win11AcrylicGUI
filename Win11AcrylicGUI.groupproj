@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1DCC3C4E-C48B-40E5-BD7F-EEC5D5C5669C}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AcrylicDelphiLight\Acrylic_Light.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AcrylicDelphiDark\Acrylic_Dark.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AcrylicCPPDark\Acrylic_Cpp_Dark.cbproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="AcrylicCPPLight\Acrylic_Cpp_Light.cbproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Acrylic_Light">
+        <MSBuild Projects="AcrylicDelphiLight\Acrylic_Light.dproj"/>
+    </Target>
+    <Target Name="Acrylic_Light:Clean">
+        <MSBuild Projects="AcrylicDelphiLight\Acrylic_Light.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acrylic_Light:Make">
+        <MSBuild Projects="AcrylicDelphiLight\Acrylic_Light.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Acrylic_Dark">
+        <MSBuild Projects="AcrylicDelphiDark\Acrylic_Dark.dproj"/>
+    </Target>
+    <Target Name="Acrylic_Dark:Clean">
+        <MSBuild Projects="AcrylicDelphiDark\Acrylic_Dark.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acrylic_Dark:Make">
+        <MSBuild Projects="AcrylicDelphiDark\Acrylic_Dark.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Acrylic_Cpp_Dark">
+        <MSBuild Projects="AcrylicCPPDark\Acrylic_Cpp_Dark.cbproj"/>
+    </Target>
+    <Target Name="Acrylic_Cpp_Dark:Clean">
+        <MSBuild Projects="AcrylicCPPDark\Acrylic_Cpp_Dark.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acrylic_Cpp_Dark:Make">
+        <MSBuild Projects="AcrylicCPPDark\Acrylic_Cpp_Dark.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Acrylic_Cpp_Light">
+        <MSBuild Projects="AcrylicCPPLight\Acrylic_Cpp_Light.cbproj"/>
+    </Target>
+    <Target Name="Acrylic_Cpp_Light:Clean">
+        <MSBuild Projects="AcrylicCPPLight\Acrylic_Cpp_Light.cbproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Acrylic_Cpp_Light:Make">
+        <MSBuild Projects="AcrylicCPPLight\Acrylic_Cpp_Light.cbproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Acrylic_Light;Acrylic_Dark;Acrylic_Cpp_Dark;Acrylic_Cpp_Light"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Acrylic_Light:Clean;Acrylic_Dark:Clean;Acrylic_Cpp_Dark:Clean;Acrylic_Cpp_Light:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Acrylic_Light:Make;Acrylic_Dark:Make;Acrylic_Cpp_Dark:Make;Acrylic_Cpp_Light:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

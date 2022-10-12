@@ -6,7 +6,7 @@
         <FrameworkType>VCL</FrameworkType>
         <MainSource>Acrylic_Dark.dpr</MainSource>
         <Platform Condition="'$(Platform)'==''">Win32</Platform>
-        <ProjectGuid>{26279F72-781A-4FE7-89F5-0459E49F8E92}</ProjectGuid>
+        <ProjectGuid>{55F47E22-91AB-4EA1-B7E1-9593E1A21D82}</ProjectGuid>
         <ProjectVersion>19.5</ProjectVersion>
         <TargetedPlatforms>1</TargetedPlatforms>
     </PropertyGroup>
